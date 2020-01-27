@@ -5,6 +5,8 @@ parameters:
 	paths:
 		- src
 		- tests
+	excludes_analyse:
+		- src/DependencyInjection/*
 	ignoreErrors:
 		- "#is not allowed to extend#"
 	tmpDir: %currentWorkingDirectory%/.build/phpstan
