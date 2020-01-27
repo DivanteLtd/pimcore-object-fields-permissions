@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions: ~
+
+  DivanteLtd\ObjectFieldsPermissions\EventListener\ObjectPreGetDataListener:
+    tags:
+      - { name: kernel.event_listener, event: pimcore.admin.dataobject.get.preSendData, method: onPreSendData }
