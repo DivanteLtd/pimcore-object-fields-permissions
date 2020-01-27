@@ -38,15 +38,8 @@ jobs:
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Validate composer.json and composer.lock"
+      - name: "Validate composer.json"
         run: "composer validate --strict"
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
@@ -67,7 +60,7 @@ jobs:
         uses: "actions/cache@v1.0.3"
         with:
           path: ".build/php-cs-fixer"
-          key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ hashFiles('**/composer.lock') }}"
+          key: "php-${{ matrix.php-version }}-php-cs-fixer"
           restore-keys: "php-${{ matrix.php-version }}-php-cs-fixer-"
 
       - name: "Run friendsofphp/php-cs-fixer"
@@ -96,13 +89,6 @@ jobs:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
@@ -142,13 +128,6 @@ jobs:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "${{ matrix.php-version }}-composer-locked-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "${{ matrix.php-version }}-composer-locked-"
 
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
@@ -202,13 +181,6 @@ jobs:
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
-
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
         run: "composer update --no-interaction --no-progress --no-suggest --prefer-lowest"
@@ -254,13 +226,6 @@ jobs:
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
-
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
         run: "composer update --no-interaction --no-progress --no-suggest --prefer-lowest"
@@ -304,13 +269,6 @@ jobs:
           coverage: "pcov"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
-        with:
-          path: "~/.composer/cache"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Install lowest dependencies with composer"
         if: "matrix.dependencies == 'lowest'"
