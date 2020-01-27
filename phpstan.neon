@@ -7,5 +7,5 @@ parameters:
 	level: max
 	paths:
 		- src
-		- test
+		- tests
 	tmpDir: %currentWorkingDirectory%/.build/phpstan
