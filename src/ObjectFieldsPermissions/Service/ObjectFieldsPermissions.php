@@ -22,7 +22,7 @@ final class ObjectFieldsPermissions
 
         foreach ($this->objectFieldsData as $class => $objectFieldsDatum) {
             //TODO compare class names
-            if ($class === $object->getClass()) {
+            if ($class === $object->getClassName()) {
                 $data = $this->getDataForObject($object, $objectFieldsDatum);
             }
         }
@@ -30,16 +30,16 @@ final class ObjectFieldsPermissions
         return $data;
     }
 
-    private function getDataForObject(AbstractObject $object, array $data): array
+    private function getDataForObject(AbstractObject $object, array $objectsData): array
     {
         $data = [];
 
-        foreach ($data as $datum) {
+        foreach ($objectsData as $objectData) {
             //TODO get role
-            if (in_array('role', $datum['roles'])) {
+            if (in_array('role', $objectData['roles'])) {
                 $fit = true;
 
-                foreach ($datum['conditions'] as $field => $value) {
+                foreach ($objectData['conditions'] as $field => $value) {
                     if ($object->get($field) !== $value) {
                         $fit = false;
                     }
