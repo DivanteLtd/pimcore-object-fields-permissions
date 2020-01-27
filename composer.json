@@ -11,7 +11,9 @@
     }
   ],
   "require": {
-    "php": "^7.2"
+    "php": "^7.2",
+    "pimcore": ">=5.5",
+    "symfony/dependency-injection": "^3.4 || ^4.4"
   },
   "require-dev": {
     "ergebnis/phpstan-rules": "~0.14.2",
