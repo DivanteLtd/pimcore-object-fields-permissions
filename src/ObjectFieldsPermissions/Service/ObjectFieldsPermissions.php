@@ -10,8 +10,6 @@ class ObjectFieldsPermissions
 {
     public function getFieldPropertities(AbstractObject $object): array
     {
-        $data = [];
-
-        return $data;
+        return [];
     }
 }
