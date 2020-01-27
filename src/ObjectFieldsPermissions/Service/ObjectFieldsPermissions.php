@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DivanteLtd\ObjectFieldsPermissions\Service;
 
-use Pimcore\Model\DataObject\AbstractObject;
+use Pimcore\Model\DataObject\Concrete;
 
 final class ObjectFieldsPermissions
 {
@@ -16,7 +16,7 @@ final class ObjectFieldsPermissions
         $this->objectFieldsData = $objectFieldsData;
     }
 
-    public function getFieldPropertities(AbstractObject $object): array
+    public function getFieldPropertities(Concrete $object): array
     {
         $data = [];
 
