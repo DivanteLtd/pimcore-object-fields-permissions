@@ -15,6 +15,7 @@
   },
   "require-dev": {
     "ergebnis/phpstan-rules": "~0.14.2",
+    "friendsofphp/php-cs-fixer": "^2.15",
     "infection/infection": "~0.15.0",
     "jangregor/phpstan-prophecy": "~0.6.0",
     "phpstan/extension-installer": "^1.0.3",
