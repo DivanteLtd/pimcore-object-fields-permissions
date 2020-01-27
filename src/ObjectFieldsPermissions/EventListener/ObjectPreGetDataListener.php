@@ -4,19 +4,17 @@ declare(strict_types=1);
 
 namespace DivanteLtd\ObjectFieldsPermissions\EventListener;
 
+use DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions;
+use Symfony\Component\EventDispatcher\GenericEvent;
+
 class ObjectPreGetDataListener
 {
-    /** @var ObjectFields */
+    /** @var ObjectFieldsPermissions */
     private $objectFieldsPermissions;
 
-    /**
-     * ProductPreGetDataListener constructor.
-     *
-     * @param ProductFields $productFields
-     */
-    public function __construct(ProductFields $productFields)
+    public function __construct(ObjectFieldsPermissions $objectFieldsPermissions)
     {
-        $this->productFields = $productFields;
+        $this->objectFieldsPermissions = $objectFieldsPermissions;
     }
 
     /**
@@ -25,12 +23,10 @@ class ObjectPreGetDataListener
     public function onPreSendData(GenericEvent $event): void
     {
         $object = $event->getArgument('object');
-        if ($object instanceof Product) {
-            $data = $event->getArgument('data');
+        $data = $event->getArgument('data');
 
-            $data['fields_properties'] = $this->productFields->getFieldPropertities($object);
+        $data['fields_properties'] = $this->objectFieldsPermissions->getFieldPropertities($object);
 
-            $event->setArgument('data', $data);
-        }
+        $event->setArgument('data', $data);
     }
 }
