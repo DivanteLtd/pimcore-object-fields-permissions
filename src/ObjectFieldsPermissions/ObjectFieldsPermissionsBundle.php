@@ -18,7 +18,7 @@ final class ObjectFieldsPermissionsBundle extends AbstractPimcoreBundle
         ];
     }
 
-    protected function getComposerPackageName(): string
+    private function getComposerPackageName(): string
     {
         return 'divante-ltd/pimcore-object-fields-permissions';
     }

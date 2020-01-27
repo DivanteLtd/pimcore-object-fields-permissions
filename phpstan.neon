@@ -8,4 +8,6 @@ parameters:
 	paths:
 		- src
 		- tests
+	ignoreErrors:
+		- "#is not allowed to extend#"
 	tmpDir: %currentWorkingDirectory%/.build/phpstan

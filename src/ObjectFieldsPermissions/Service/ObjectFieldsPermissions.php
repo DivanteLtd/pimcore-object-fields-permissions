@@ -6,7 +6,7 @@ namespace DivanteLtd\ObjectFieldsPermissions\Service;
 
 use Pimcore\Model\DataObject\AbstractObject;
 
-class ObjectFieldsPermissions
+final class ObjectFieldsPermissions
 {
     public function getFieldPropertities(AbstractObject $object): array
     {
