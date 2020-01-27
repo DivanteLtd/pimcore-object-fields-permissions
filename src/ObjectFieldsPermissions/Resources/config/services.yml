@@ -3,7 +3,9 @@ services:
     autowire: true
     autoconfigure: true
 
-  DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions: ~
+  DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions:
+    arguments:
+      - '%object_fields_permissions%'
 
   DivanteLtd\ObjectFieldsPermissions\EventListener\ObjectPreGetDataListener:
     tags:

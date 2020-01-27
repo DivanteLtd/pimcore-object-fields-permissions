@@ -14,11 +14,11 @@ final class ObjectFieldsPermissionsBundle extends AbstractPimcoreBundle
     public function getJsPaths(): array
     {
         return [
-            '/bundles/objectfieldspermissions/js/pimcore/startup.js',
+            '/bundles/objectfieldspermissions/js/pimcore/object/helper/edit.js',
         ];
     }
 
-    private function getComposerPackageName(): string
+    protected function getComposerPackageName(): string
     {
         return 'divante-ltd/pimcore-object-fields-permissions';
     }
