@@ -11,7 +11,7 @@ on:
 env:
   MIN_COVERED_MSI: 100
   MIN_MSI: 100
-  REQUIRED_PHP_EXTENSIONS: "mbstring ext-intl"
+  REQUIRED_PHP_EXTENSIONS: "mbstring intl"
 
 jobs:
   coding-standards:
