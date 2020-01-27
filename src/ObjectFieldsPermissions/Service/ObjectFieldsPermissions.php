@@ -12,6 +12,6 @@ class ObjectFieldsPermissions
     {
         $data = [];
 
-
+        return $data;
     }
 }

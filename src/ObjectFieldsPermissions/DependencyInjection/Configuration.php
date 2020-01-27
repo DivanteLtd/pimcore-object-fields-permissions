@@ -17,11 +17,11 @@ class Configuration implements ConfigurationInterface
         }
         $rootNode
             ->children()
-                ->arrayNode('objects')
-                    ->useAttributeAsKey('class')
-                    ->prototype('scalar')
-                    ->end()
-                ->end()
+            ->arrayNode('objects')
+            ->useAttributeAsKey('class')
+            ->prototype('scalar')
+            ->end()
+            ->end()
             ->end();
 
         return $treeBuilder;
