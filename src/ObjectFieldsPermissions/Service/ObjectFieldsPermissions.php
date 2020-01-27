@@ -30,7 +30,7 @@ final class ObjectFieldsPermissions
         return $data;
     }
 
-    private function getDataForObject(AbstractObject $object, array $objectsData): array
+    private function getDataForObject(Concrete $object, array $objectsData): array
     {
         $data = [];
 
@@ -46,7 +46,7 @@ final class ObjectFieldsPermissions
                 }
 
                 if ($fit) {
-                    return $data['fields'];
+                    return $objectData['fields'];
                 }
             }
         }
