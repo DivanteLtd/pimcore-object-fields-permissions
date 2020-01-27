@@ -7,7 +7,7 @@ namespace DivanteLtd\ObjectFieldsPermissions;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 
-class ObjectFieldsPermissionsBundle extends AbstractPimcoreBundle
+final class ObjectFieldsPermissionsBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
 
