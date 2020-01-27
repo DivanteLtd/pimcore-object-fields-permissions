@@ -7,17 +7,13 @@ namespace DivanteLtd\ObjectFieldsPermissions\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class Configuration implements ConfigurationInterface
+final class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        if (method_exists(TreeBuilder::class, 'getRootNode')) {
-            $treeBuilder = new TreeBuilder('object_fields_permissions');
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            $treeBuilder = new TreeBuilder();
-            $rootNode = $treeBuilder->root('object_fields_permissions');
-        }
+        $treeBuilder = new TreeBuilder('object_fields_permissions');
+        $rootNode = $treeBuilder->getRootNode();
+
         $rootNode
             ->children()
             ->arrayNode('objects')
