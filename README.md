@@ -9,10 +9,6 @@
 [![Latest Stable Version](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/v/stable)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)
 [![Total Downloads](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)
 
-## Installation
-
-:bulb: This is a great place for showing how to install the package, see below:
-
 ## Install
 
 ```
