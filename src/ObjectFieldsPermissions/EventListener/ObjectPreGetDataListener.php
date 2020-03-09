@@ -7,7 +7,7 @@ namespace DivanteLtd\ObjectFieldsPermissions\EventListener;
 use DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-final class ObjectPreGetDataListener
+class ObjectPreGetDataListener
 {
     /** @var ObjectFieldsPermissions */
     private $objectFieldsPermissions;

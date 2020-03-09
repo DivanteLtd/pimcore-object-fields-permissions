@@ -5,8 +5,8 @@
 [![Code Coverage](https://codecov.io/gh/divanteltd/pimcore-object-fields-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/divanteltd/pimcore-object-fields-permissions)
 [![Type Coverage](https://shepherd.dev/github/divanteltd/pimcore-object-fields-permissions/coverage.svg)](https://shepherd.dev/github/divanteltd/pimcore-object-fields-permissions)
 
-[![Latest Stable Version](https://poser.pugx.org/divanteltd/pimcore-object-fields-permissions/v/stable)](https://packagist.org/packages/divanteltd/pimcore-object-fields-permissions)
-[![Total Downloads](https://poser.pugx.org/divanteltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divanteltd/pimcore-object-fields-permissions)
+[![Latest Stable Version](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/v/stable)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)[![Total Downloads](https://poser.pugx.org/divanteltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divanteltd/pimcore-object-fields-permissions)
+[![Total Downloads](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)
 
 ## Install
 
