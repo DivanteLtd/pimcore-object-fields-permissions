@@ -1,8 +1,6 @@
 pimcore.registerNS("pimcore.object.helpers.edit");
 pimcore.object.helpers.edit = {
     getRecursiveLayout: function (l, properties, noteditable, context, skipLayoutChildren, onlyLayoutChildren, dataProvider, disableLazyRendering) {
-        var self = this;
-
         if (typeof context === "undefined") {
             context = {};
         }
@@ -15,14 +13,13 @@ pimcore.object.helpers.edit = {
 
         var panelListenerConfig = {};
 
-        var tabpanelCorrection = function (panel, event) {
+        var tabpanelCorrection = function (panel) {
             window.setTimeout(function () {
                 try {
                     if(typeof panel["pimcoreLayoutCorrected"] == "undefined") {
                         var parentEl = panel.body.findParent(".x-tab-panel");
                         if(parentEl && Ext.get(parentEl).getWidth()) {
                             panel.setWidth(Ext.get(parentEl).getWidth()-50);
-                            //panel.getEl().applyStyles("position:relative;");
                             panel.ownerCt.updateLayout();
 
                             panel["pimcoreLayoutCorrected"] = true;
@@ -32,8 +29,7 @@ pimcore.object.helpers.edit = {
                     console.log(e);
                 }
             }, 2000);
-            self.updateEtimTim(panel);
-        }.bind(this);
+        };
 
         var xTypeLayoutMapping = {
             accordion: {
@@ -65,7 +61,7 @@ pimcore.object.helpers.edit = {
                 forceLayout: true,
                 monitorResize: true,
                 bodyStyle: "padding: 10px",
-                border: true,
+                border: false,
                 defaults: {
                     width: "auto"
                 },
@@ -85,7 +81,7 @@ pimcore.object.helpers.edit = {
                 activeTab: 0,
                 monitorResize: true,
                 deferredRender: true,
-                border: true,
+                border: false,
                 bodyStyle: "padding: 10px",
                 forceLayout: true,
                 hideMode: "offsets",
@@ -110,19 +106,18 @@ pimcore.object.helpers.edit = {
         };
 
         var validKeys = ["xtype","title","layout","icon","items","region","width","height","name","text","html","handler",
-            "labelWidth", "fieldLabel", "collapsible","collapsed","bodyStyle","listeners"];
+            "labelWidth", "fieldLabel", "collapsible","collapsed","bodyStyle","listeners", "border", "tabPosition"];
 
         var tmpItems;
 
         // translate title
         if(typeof l.title != "undefined") {
-            l.title = ts(l.title);
+            l.title = t(l.title);
         }
 
         if (l.datatype == "layout") {
             if (skipLayoutChildren !== true && l.childs && typeof l.childs == "object") {
                 if (l.childs.length > 0) {
-
                     l.items = [];
                     for (var i = 0; i < l.childs.length; i++) {
 
@@ -198,7 +193,7 @@ pimcore.object.helpers.edit = {
                     if(l[configKeys[u]]) {
                         //if (typeof l[configKeys[u]] != "undefined") {
                         if(configKeys[u] == "html"){
-                            newConfig[configKeys[u]] = l["renderingClass"] ? l[configKeys[u]] : ts(l[configKeys[u]]);
+                            newConfig[configKeys[u]] = l["renderingClass"] ? l[configKeys[u]] : t(l[configKeys[u]]);
                         } else {
                             newConfig[configKeys[u]] = l[configKeys[u]];
                         }
@@ -276,16 +271,31 @@ pimcore.object.helpers.edit = {
                     l.title += ' <span style="color:red;">*</span>';
                 }
                 if(l.tooltip) {
-                    l.title += ' <span class="pimcore_object_label_icon pimcore_icon_info"></span>';
+                    l.title += ' <span class="pimcore_object_label_icon pimcore_icon_gray_info"></span>';
                 }
 
                 var field = new pimcore.object.tags[l.fieldtype](data, l);
 
+                let applyDefaults = false;
+                if (context && context['applyDefaults']) {
+                    applyDefaults = true;
+                }
                 field.setObject(this.object);
                 field.updateContext(context);
+
                 field.setName(l.name);
                 field.setTitle(l.titleOriginal);
+
+                if (applyDefaults && typeof field["applyDefaultValue"] !== "undefined") {
+                    field.applyDefaultValue();
+                }
                 field.setInitialData(data);
+
+
+                if (typeof field["finishSetup"] !== "undefined") {
+                    field.finishSetup();
+                }
+
 
                 if (typeof l.labelWidth != "undefined") {
                     field.labelWidth = l.labelWidth;
@@ -370,16 +380,15 @@ pimcore.object.helpers.edit = {
                                 }
                             }
 
-
                             // apply tooltips
                             if(field.tooltip) {
                                 try {
                                     new Ext.ToolTip({
                                         target: el,
-                                        title: field.title,
-                                        html: nl2br(ts(field.tooltip)),
+                                        html: nl2br(t(field.tooltip)),
                                         trackMouse:true,
-                                        showDelay: 200
+                                        showDelay: 200,
+                                        dismissDelay: 0
                                     });
                                 } catch (e6) {
                                     console.log(e6);
