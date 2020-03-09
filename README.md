@@ -21,7 +21,21 @@ bin/console pimcore:bundle:enable ObjectFieldsPermissionsBundle
 ```
 ## Usage
 
-TODO
+```yaml
+object_fields_permissions:
+    objects:
+        Product:
+            -
+                roles: ['ROLE_EDITOR', 'ROLE_TRANSLATOR']
+                conditions:
+                    -
+                        status: 'edit'
+                properties:
+                    -
+                        price: ['locked']
+                        description: ['mandatory']
+```
+In above example for user with role `EDITOR` or `TRANSLATOR` when object with class `Product` will have value `edit` for field `status` field `price` will be locked and `description` will be `mandatory`
 
 ## Contributing
 
