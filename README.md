@@ -1,13 +1,12 @@
 # pimcore-object-fields-permissions
 
-[![Continuous Deployment](https://github.com/divante-ltd/pimcore-object-fields-permissions/workflows/Continuous%20Deployment/badge.svg)](https://github.com/divante-ltd/pimcore-object-fields-permissions/actions)
-[![Continuous Integration](https://github.com/divante-ltd/pimcore-object-fields-permissions/workflows/Continuous%20Integration/badge.svg)](https://github.com/divante-ltd/pimcore-object-fields-permissions/actions)
+[![Continuous Integration](https://github.com/divanteltd/pimcore-object-fields-permissions/workflows/Continuous%20Integration/badge.svg)](https://github.com/divanteltd/pimcore-object-fields-permissions/actions)
 
-[![Code Coverage](https://codecov.io/gh/divante-ltd/pimcore-object-fields-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/divante-ltd/pimcore-object-fields-permissions)
-[![Type Coverage](https://shepherd.dev/github/divante-ltd/pimcore-object-fields-permissions/coverage.svg)](https://shepherd.dev/github/divante-ltd/pimcore-object-fields-permissions)
+[![Code Coverage](https://codecov.io/gh/divanteltd/pimcore-object-fields-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/divanteltd/pimcore-object-fields-permissions)
+[![Type Coverage](https://shepherd.dev/github/divanteltd/pimcore-object-fields-permissions/coverage.svg)](https://shepherd.dev/github/divanteltd/pimcore-object-fields-permissions)
 
-[![Latest Stable Version](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/v/stable)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)
-[![Total Downloads](https://poser.pugx.org/divante-ltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divante-ltd/pimcore-object-fields-permissions)
+[![Latest Stable Version](https://poser.pugx.org/divanteltd/pimcore-object-fields-permissions/v/stable)](https://packagist.org/packages/divanteltd/pimcore-object-fields-permissions)
+[![Total Downloads](https://poser.pugx.org/divanteltd/pimcore-object-fields-permissions/downloads)](https://packagist.org/packages/divanteltd/pimcore-object-fields-permissions)
 
 ## Install
 

@@ -19,7 +19,7 @@ final class ObjectFieldsPermissionsExtension extends Extension
         $loader->load('services.yml');
 
         foreach ($config as $key => $value) {
-            $container->setParameter('object_fields_permissions.' . $key, $value);
+            $container->setParameter('object_fields_permissions', $config);
         }
     }
 }
