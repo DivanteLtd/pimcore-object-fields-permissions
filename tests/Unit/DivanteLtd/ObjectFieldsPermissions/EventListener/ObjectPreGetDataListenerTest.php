@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace tests\DivanteLtd\ObjectFieldsPermissions\EventListener;
+namespace DivanteLtd\ObjectFieldsPermissions\Tests\Unit\DivanteLtd\ObjectFieldsPermissions\EventListener;
 
 use DivanteLtd\ObjectFieldsPermissions\EventListener\ObjectPreGetDataListener;
 use DivanteLtd\ObjectFieldsPermissions\Service\ObjectFieldsPermissions;
 use Pimcore\Model\DataObject;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-class ObjectPreGetDataListenerTest extends TestCase
+final class ObjectPreGetDataListenerTest extends TestCase
 {
     /** @var ObjectPreGetDataListener */
     private $objectPreGetDataListener;
